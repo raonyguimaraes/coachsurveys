@@ -1,0 +1,15 @@
+Question {{question.name}}
+
+<h2>Choices</h2>
+
+{{choices}}
+
+<ul>
+    {% for choice in choices %}
+    <li>{{ choice.choice }}  :  
+    <a href="{#% url "choice_view" choice.id %#}">View</a>
+    <a href="{#% url "choice_edit" choice.id %#}">Edit</a>
+    <a href="{#% url "choice_delete" choice.id %#}">delete</a>
+    </li>
+    {% endfor %}
+</ul>

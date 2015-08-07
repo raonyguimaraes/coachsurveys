@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1>Survey {{survey.id}} - {{survey.title}}</h1>
+<a href="{% url "question_new" survey.id %}">New Question</a>
+
+<h2>Questions</h2>
+
+<ul>
+    {% for question in questions %}
+    <li>{{ question.name }}  :  
+    <a href="{% url "question_view" survey.id question.id %}">View</a>
+    <a href="{% url "question_edit" survey.id question.id %}">Edit</a>
+    <a href="{% url "question_delete" survey.id question.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="{% static 'site/js/site.js' %}"></script>
+{% endblock scripts %}

@@ -1,0 +1,18 @@
+<h1>Add Question</h1>
+
+<form method="post">{% csrf_token %}
+
+    {{ form.as_p }}
+
+
+    <p>A: <input type="text" name="choice" value="" /></p>
+	<p>B:<input type="text" name="choice" value="" /></p>
+	<p>C:<input type="text" name="choice" value="" /></p>
+	<p>D:<input type="text" name="choice" value="" /></p>
+	<p>E:<input type="text" name="choice" value="" /></p>
+
+	<input type="button" onclick="location.href='{% url 'survey_view' survey.id %}';" value="Go Back to Survey" />
+    <input type="submit" value="Save Question and Go Back" />
+    <input type="submit" name = "add_another" value="Save and add another question">
+
+</form>
