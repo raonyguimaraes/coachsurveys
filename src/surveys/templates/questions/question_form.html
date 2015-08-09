@@ -1,9 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <h1>Add Question</h1>
 
 <form method="post">{% csrf_token %}
 
     {{ form.as_p }}
-
 
     <p>A: <input type="text" name="choice" value="" /></p>
 	<p>B:<input type="text" name="choice" value="" /></p>
@@ -16,3 +19,5 @@
     <input type="submit" name = "add_another" value="Save and add another question">
 
 </form>
+
+{% endblock content %}

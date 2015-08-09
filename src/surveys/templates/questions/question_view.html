@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 Question {{question.name}}
 
 <h2>Choices</h2>
@@ -13,3 +17,5 @@ Question {{question.name}}
     </li>
     {% endfor %}
 </ul>
+
+{% endblock content %}
